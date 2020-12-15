@@ -12,15 +12,18 @@ function getInputsValues() {
 
     let weight = document.getElementById('weight');
     let rer = 70*(Math.pow(weight.value, 0.67));
-    document.getElementById('rer').innerHTML=rer;
+    rer = Number(rer).toFixed(2);
+    document.getElementById('rer').innerHTML=(rer + ' [kcal per day]');
+
 
     let criteria = document.getElementById('criteria');
-    document.getElementById('factor-value').innerHTML=factor[criteria.value];
     let der = rer * (factor[criteria.value]);
-    document.getElementById('der').innerHTML=der;
+    der = Number(der).toFixed(2);
+    document.getElementById('der').innerHTML=(der + ' [kcal per day]');
 
     let foodCalories = document.getElementById('food-calories');
     let food = (100*der)/foodCalories.value;
-    document.getElementById('food-g').innerHTML=food;
+    food = Number(food).toFixed(2);
+    document.getElementById('food-g').innerHTML=(food + ' [g]');
 
 }

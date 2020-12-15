@@ -20,52 +20,51 @@
     <body>
         <div class="main">
             <section class="calculator">
-                <h3>Cat's daily calorie requirement</h3>
-                    <form id="formula" method="POST">
-                        <fieldset>
-                            <label for="weight">
-                                Cat's weight [kg]:<br>
-                                <input id="weight" type="number" autofocus>
-                            </label>
-                            <p>
-                                RER (resting energy requirement) value [kcal per day]: 
-                                <span id="rer"></span>
-                            </p>
+                <h3>Cat's daily calories requirement</h3>
+                <form id="formula" method="POST">
+                    <fieldset>
+                        <label class="weight" for="weight">
+                            Cat's weight [kg]:
+                            <input id="weight" type="number" autofocus>
+                        </label>
 
-                            <label for="criteria">
-                                Cat's criteria:<br>
-                                <select id="criteria">
-                                    <option value="" selected>---select criteria---</option>
-                                    <option value="months0-4">0-4 months old</option>
-                                    <option value="months4-12">4-12 months old</option>
-                                    <option value="neutered">neutered adult</option>
-                                    <option value="intact">intact adult</option>
-                                    <option value="inactive/obese">inactive/obese</option>
-                                    <option value="weight-loss">weight loss</option>
-                                    <option value="weight-gain">weight gain</option>
-                                </select>                                
-                            </label>
-                            <p>
-                                Criteria factor: 
-                                <span id="factor-value"></span>
-                            </p>
-                            <p>
-                                DER (daily energy requirement) [kcal per day]: 
-                                <span id="der"></span>
-                            </p>
+                        <label class="criteria" for="criteria">
+                            Cat's criteria:
+                            <select id="criteria">
+                                <option value="" selected>---select criteria---</option>
+                                <option value="months0-4">0-4 months old</option>
+                                <option value="months4-12">4-12 months old</option>
+                                <option value="neutered">neutered adult</option>
+                                <option value="intact">intact adult</option>
+                                <option value="inactive/obese">inactive/obese</option>
+                                <option value="weight-loss">weight loss</option>
+                                <option value="weight-gain">weight gain</option>
+                            </select>                                
+                        </label>
+                        <p>
+                            RER (resting energy requirement) value: 
+                            <span id="rer"></span>
+                        </p>
+                        <p>
+                            DER (daily energy requirement): 
+                            <span id="der"></span>
+                        </p>
 
-                            <label for="food-calories">
-                                Calories in 100g of food:<br>
-                                <input id="food-calories" type="number">
-                            </label>  
-                            <p>
-                                Daily food requirement [g]: 
-                                <span id="food-g"></span>
-                            </p>
-                            <button type="button" onclick="getInputsValues()">submit</button>                     
-                        </fieldset>
-                    </form>
+                        <label for="food-calories">
+                            Calories in 100g of food:<br>
+                            <input id="food-calories" type="number">
+                        </label>  
+                        <p>
+                            Daily food requirement: 
+                            <span id="food-g"></span>
+                        </p>
+                        <button type="button" onclick="getInputsValues()">submit</button>                     
+                    </fieldset>
+                </form>
             </section>
+            <!-- <div class="gif">
+                <img src="./purr.gif" alt="cats">
+            </div> -->
         </div>
                        
         <script src="./script.js"></script>
