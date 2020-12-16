@@ -16,10 +16,54 @@ body {
     align-items: center;
 }
 
-/* .weight,
-.criteria {
-    display: inline-block;
+#weight,
+#weight:focus,
+#criteria,
+#criteria:focus,
+#food-calories,
+#food-calories:focus,
+option,
+option:focus {
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    outline: none;
+    background-color: black;
+    color: inherit;
+    
+}
+
+option.decorated:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px 100px white inset;
+}
+
+option:hover{background-color:yellow;}
+
+select:active, select:hover {
+    outline-color: red
+  }
+
+/* select:focus > option:checked { 
+    background: rgb(255, 255, 255) !important;
 } */
+
+select option:checked,
+select option:hover {
+    box-shadow: 0 0 10px 100px rgb(255, 255, 255) inset;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance: textfield; 
+}
 
 /* #der {
     background-color: white;
