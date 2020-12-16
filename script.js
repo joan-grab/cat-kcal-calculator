@@ -1,4 +1,5 @@
 const factor = {
+    '0' : 0,
     'months0-4' : 2.5,
     'months4-12' : 2,
     'neutered' : 1.2,
@@ -8,44 +9,52 @@ const factor = {
     'weight-gain' : 1.3,
 }
 
+function numberFormat(val){
+    return Number(val).toFixed(2);
+}
+
+function calcValues() {
+
+    // rer
+    const weight = document.getElementById('weight');
+    console.log('weight:', weight.value);
+    const rer = 70*(Math.pow(weight.value, 0.67));
+    document.getElementById('rer').innerHTML=(numberFormat(rer) + ' [kcal per day]');
+
+    // der
+    const criteria = document.getElementById('criteria');
+    const der = rer * (factor[criteria.value]);
+    document.getElementById('der').innerHTML=(numberFormat(der) + ' [kcal per day]');
+    const foodCalories = document.getElementById('food-calories');
+
+    // food weight
+    const foodCaloriesVal = parseFloat(foodCalories.value);
+    if (foodCaloriesVal > 0) {
+        const food = (100*der)/foodCaloriesVal;
+        document.getElementById('food-g').innerHTML=(numberFormat(food) + ' [g]');
+    }
+}
+
+// init calc
+calcValues();
+
 const calculator = document.getElementById('form');
-let weight = document.getElementById('weight');
-let criteria = document.getElementById('criteria');
-let foodCalories = document.getElementById('food-calories');
-
-let rer = 70*(Math.pow(weight.value, 0.67));
-let der = rer * (factor[criteria.value]);
-let food = (100*der)/foodCalories.value;
-
 
 if (calculator !== null) {
 
-    calculator.addEventListener('keydown', event => {
+    calculator.addEventListener('keyup', event => {
+
         if (event.target.id === 'weight') { 
-            rer = 70*(Math.pow(weight.value, 0.67));
-            document.getElementById('rer').innerHTML=(Number(rer).toFixed(2) + ' [kcal per day]');
-            der = rer * (factor[criteria.value]);
-            document.getElementById('der').innerHTML=(Number(der).toFixed(2) + ' [kcal per day]');
-            food = (100*der)/foodCalories.value;
-            document.getElementById('food-g').innerHTML=(Number(food).toFixed(2) + ' [g]');
+            calcValues();
+        } else if (event.target.id === 'food-calories')  { 
+            calcValues();
         }
 
-        else if (event.target.id === 'food-calories')  { 
-            sleep(20);
-            console.log(der);
-            console.log(foodCalories.value);
-
-            food = (100*der)/foodCalories.value;
-            document.getElementById('food-g').innerHTML=(Number(food).toFixed(2) + ' [g]');
-        }  
     })
 
     calculator.addEventListener('change', event => {
         if (event.target.id === 'criteria')  { 
-            der = rer * (factor[criteria.value]);
-            document.getElementById('der').innerHTML=(Number(der).toFixed(2) + ' [kcal per day]');
-            food = (100*der)/foodCalories.value;
-            document.getElementById('food-g').innerHTML=(Number(food).toFixed(2) + ' [g]');
+            calcValues();
         }        
     })
 }
