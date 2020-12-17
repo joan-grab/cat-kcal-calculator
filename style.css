@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -16,6 +16,21 @@ body {
     align-items: center;
 }
 
+*/
+
+.container {
+    max-width: 830px;
+}
+
+p {
+    margin: 0;
+}
+/*
+
+h3 {
+    margin-top: .5rem;
+}
+
 #weight,
 #weight:focus,
 #criteria,
@@ -31,6 +46,7 @@ option:focus {
     outline: none;
     background-color: black;
     color: inherit;
+    margin-bottom: 1rem;
     
 }
 
@@ -43,4 +59,4 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield; 
 }
-
+ */
