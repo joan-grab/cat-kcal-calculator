@@ -28,16 +28,16 @@
                 <form id="form" class="calculator" method="POST">
                     <div class="container">
                         <div class="row mb-2">
-                            <div class="col-md-6 col-sm-12 ">
-                                <div class="form-group row">
-                                    <label class="weight col-sm-6 text-md-end" for="weight">Cat's weight [kg]:</label>
-                                    <input id="weight" class="col-sm-6 rounded" type="number" value="0" min="0" max="100" autofocus>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label class="weight" for="weight">Cat's weight [kg]:</label>
+                                    <input id="weight" class="form-control rounded" type="number" value="0" min="0" max="100" autofocus>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12 ">
-                                <div class="form-group row">
-                                    <label class="criteria col-sm-6" for="criteria">Cat's criteria:</label>
-                                    <select id="criteria" class="col-sm-6  rounded">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label class="criteria" for="criteria">Cat's criteria:</label>
+                                    <select id="criteria" class="form-select rounded">
                                         <option value="0" selected>----select----</option>
                                         <option value="months0-4">0-4 months old</option>
                                         <option value="months4-12">4-12 months old</option>
@@ -52,24 +52,27 @@
                             </div>                                                      
                         </div>
 
-                        <div class="form-group  row mb-2">
+                        <div class="row mb-2">
                             <p class="col-sm-6 text-md-end">RER (resting energy requirement) value:</p>
                             <span id="rer" class="col-sm-6 text-md-start text-sm-end"></span>
                         </div>
 
-                        <div class="form-group  row mb-2">
+                        <div class="row mb-2">
                             <p class="col-sm-6 text-md-end">DER (daily energy requirement):</p> 
                             <span id="der" class="col-sm-6 text-md-start text-sm-end "></span>
                         </div>
 
-                        <div class="form-group  row mb-2">
-                            <div class="form-group row">
-                                <label class="col-md-3 col-sm-6 text-md-end" for="food-calories">Kcal in 100g of food:</label>
-                                <input id="food-calories" class="col-md-3 col-sm-6 rounded" type="number" value="0" min="0" max="1000">
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="" for="food-calories">Kcal in 100g of food:</label>
+                                    <input id="food-calories" class="form-control rounded" type="number" value="0" min="0" max="1000">
+                                </div>
                             </div>
+                            <div class="col-md-6 col-sm-12"></div>
                         </div>
 
-                        <div class="form-group  row mb-2">
+                        <div class="row mb-2">
                             <p class="col-sm-6 text-md-end">Daily food requirement:</p> 
                             <span id="food-g" class="col-sm-6 text-md-start text-sm-end"></span>
                         </div>
