@@ -11,59 +11,81 @@
         <meta name="author" content="Joan Grab">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
 
     </head>
 
     <body>
         <div>
-            <section class="main"> 
-                <h3>Cat's daily calories requirement</h3>
-                <form id="form" method="POST">
-                    <fieldset class="calculator"> 
-                        <label class="weight" for="weight">
-                            Cat's weight [kg]:
-                            <input id="weight" type="number" value="0" min="0" max="100" autofocus>
-                        </label>
+            <section> 
+                <div class="jumbotron">
+                    <div class="container">
+                        <h3 class="display-3 text-center">Cat's daily calories requirement</h3>
+                    </div>
+                </div>
+                <!-- <h3 class="p-3">Cat's daily calories requirement</h3> -->
+                <form id="form" class="calculator" method="POST">
+                    <div class="container">
+                        <div class="row mb-2">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label class="weight" for="weight">Cat's weight [kg]:</label>
+                                    <input id="weight" class="form-control rounded" type="number" value="0" min="0" max="100" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label class="criteria" for="criteria">Cat's criteria:</label>
+                                    <select id="criteria" class="form-select rounded">
+                                        <option value="0" selected>----select----</option>
+                                        <option value="months0-4">0-4 months old</option>
+                                        <option value="months4-12">4-12 months old</option>
+                                        <option value="neutered">neutered adult</option>
+                                        <option value="intact">intact adult</option>
+                                        <option value="inactive/obese">inactive/obese</option>
+                                        <option value="weight-loss">weight loss</option>
+                                        <option value="weight-gain">weight gain</option>t
+                                    </select>
+                                    <div class="col-sm-3"></div>
+                                </div>  
+                            </div>                                                      
+                        </div>
 
-                        <label class="criteria" for="criteria">
-                            Cat's criteria:
-                            <select id="criteria">
-                                <option value="0" selected>---select---</option>
-                                <option value="months0-4">0-4 months old</option>
-                                <option value="months4-12">4-12 months old</option>
-                                <option value="neutered">neutered adult</option>
-                                <option value="intact">intact adult</option>
-                                <option value="inactive/obese">inactive/obese</option>
-                                <option value="weight-loss">weight loss</option>
-                                <option value="weight-gain">weight gain</option>
-                            </select>                                
-                        </label>
-                        <p>
-                            RER (resting energy requirement) value: 
-                            <span id="rer"></span>
-                        </p>
-                        <p>
-                            DER (daily energy requirement): 
-                            <span id="der"></span>
-                        </p>
+                        <div class="row mb-2">
+                            <p class="col-sm-6 text-md-end">RER (resting energy requirement) value:</p>
+                            <span id="rer" class="col-sm-6 text-md-start text-sm-end"></span>
+                        </div>
 
-                        <label for="food-calories">
-                            Calories in 100g of food:<br>
-                            <input id="food-calories" type="number" value="0" min="0" max="1000">
-                        </label>  
-                        <p>
-                            Daily food requirement: 
-                            <span id="food-g"></span>
-                        </p>
-                    </fieldset>
+                        <div class="row mb-2">
+                            <p class="col-sm-6 text-md-end">DER (daily energy requirement):</p> 
+                            <span id="der" class="col-sm-6 text-md-start text-sm-end "></span>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="" for="food-calories">Kcal in 100g of food:</label>
+                                    <input id="food-calories" class="form-control rounded" type="number" value="0" min="0" max="1000">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12"></div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <p class="col-sm-6 text-md-end">Daily food requirement:</p> 
+                            <span id="food-g" class="col-sm-6 text-md-start text-sm-end"></span>
+                        </div>
+                    </div>                                    
                 </form>
             </section>
             <!-- <div class="gif">
                 <img src="./purr.gif" alt="cats">
             </div> -->
         </div>
-                       
+         
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="./script.js"></script>
     </body>
 </html>
